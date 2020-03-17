@@ -1,0 +1,9 @@
+{
+  "hooks": {
+    "build": {
+      "commands": [
+        "./sbt -DdockerRepository=gcr.io -DdockerUsername=${GOOGLE_CLOUD_PROJECT} -DpackageName=${K_SERVICE} docker:publish"
+      ]
+    }
+  }
+}

@@ -35,3 +35,9 @@ dockerCommands := Seq(
   Cmd("COPY", "2/opt", "/opt"),
   ExecCmd("CMD", s"/opt/docker/lib/${(artifactPath in packageJavaLauncherJar).value.getName}")
 )
+
+dockerRepository := sys.props.get("dockerRepository")
+
+dockerUsername := sys.props.get("dockerUsername")
+
+packageName in Docker := sys.props.getOrElse("packageName", name.value)
